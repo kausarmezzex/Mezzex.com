@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Gallery</title>
+    <link rel="icon" href="../../images/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="dist/spotlight.bundle.js"></script>
+    <!--<script src="dist/js/spotlight.min.js"></script>-->
+    <!--<link rel="stylesheet" href="dist/css/spotlight.min.css">-->
+    <!-- Custom Control: -->
+    <style>
+        /*
+         * Custom Control:
+         * ---------------
+         */
+        /* custom classes are always prefixed by "spl-" automatically */
+        .spl-like{
+            background-image: url(demo/gallery/heart-outline.svg);
+            background-size: 23px;
+        }
+        /* optionally, additional state to toggle the button: */
+        .spl-like.on{
+            background-image: url(demo/gallery/heart.svg);
+        }
+        /*
+         * Custom Animation:
+         * -----------------
+         */
+        /* custom scene transition (slide effect) */
+        .only-this-gallery.show .spl-scene{
+            transition: transform 0.2s ease;
+        }
+        /* custom animation "visible state" (css context by custom classname "only-this-gallery" to apply these animation just on a specific gallery) */
+        .only-this-gallery.show .spl-pane > *{
+            clip-path: circle(100% at center);
+            transition: transform 0.35s ease,
+                        opacity 0.65s ease,
+                        clip-path 0.8s ease;
+        }
+        /* custom animation "hidden state" ("custom" is the name of the animation you pass as gallery option) */
+        .only-this-gallery .spl-pane .custom {
+            clip-path: circle(0px at center) ;
+            transition: transform 0.65s ease,
+                        opacity 0.65s ease;
+        }
+        /* animation state when gallery is hidden */
+        #spotlight.only-this-gallery{
+            clip-path: circle(0px at center);
+        }
+        /* animation state when gallery will open */
+        #spotlight.only-this-gallery.show{
+            clip-path: circle(100% at center);
+            transition: clip-path 0.65s ease 0.15s;
+        }
+    </style>
+    <link rel="stylesheet" href="demo/style.css">
+    
+   
+</head>
+<body>
+   <!--::header part start::-->
+    <header class="main_menu home_menu">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-light" id="main_navbar">
+		     <a class="navbar-brand" href="index.html">
+                <img src="../images/mezzex-logo.png" alt="logo" />
+              </a>
+             <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
+                 <ul class="navbar-nav align-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../about-us.html">About Us</a>
+                  </li>
+				  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item"  href="../website-designing-development.html">Website Designing & Development</a>
+                      <a class="dropdown-item" href="../digital-marketing.html">Digital Marketing</a>
+                      <a class="dropdown-item" href="../software-development.html">Software Development</a>
+					  <a class="dropdown-item" href="../app-development.html">App Development</a>
+					  <a class="dropdown-item" href="../ecommerce-service.html">Ecommerce services</a>
+					  <a class="dropdown-item" href="../warehouse-management.html">Warehouse Management</a>
+                    </ul>
+                  </li>
+				  <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../careers.html">Careers</a>
+                  </li>
+				 
+                  <li class="nav-item">
+                    <a class="nav-link" href="../contact-us.html">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="social_icon d-none d-lg-block">
+                <a href="https://www.facebook.com/officialmezzex" target="_blank"><i class="ti-facebook"></i></a>
+                <a href="https://twitter.com/MezzexM" target="_blank"><i class="ti-twitter-alt"></i></a>
+                <a href="https://www.linkedin.com/company/mezzex/about/" target="_blank"><i class="ti-linkedin"></i></a>
+                <a href="https://www.instagram.com/officialmezzex/" target="_blank"><i class="ti-instagram"></i></a>
+				
+              </div>
+			  <div class="main-get-quote">
+			  <a href="contact-us.html" class="btn_1 get-quote">Get A Quote</a>
+			  </div>
+			   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="ti-menu"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb gallery-page-breadcrumb breadcrumb_bg align-items-center">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm-12">
+                    <div class="breadcrumb_tittle text-left">
+                        <p><a href="index.html"><span class="ti-home home-breadicon"></span><strong>home</strong> </a><span class="ti-angle-right breabarwicon"> </span><strong>Gallery</strong></p>
+                        <h2>Gallery</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+	
+	 <!-- E-Commerce Service start -->
+ <section id="ecommerce-servicee">
+ <div class="container">
+ <div class="row">
+ <div class="col-lg-8 animated fadeInDown" data-wow-delay="0.1s">
+ 
+ <h2 class="text-left typewrite animated fadeInDown" data-wow-delay="0.1s" data-period="2000" data-type='[ "Gallery", "With Mezzex"]' >
+<span class="wrap about-txt"></span>
+ </h2> 
+ 
+<p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+<p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+ 
+ </div>
+ 
+ <div class="col-lg-4 floating animated fadeInDown" data-wow-delay="0.1s">
+ <img src="../images/hero-gallery-1500w.jpg" alt="hero-gallery-1500w" class="img-fluid">
+ </div>
+ </div>
+ 
+ </div>
+ </section>
+ <!-- E-Commerce Service end -->
+ 
+<div class="container-fluid">
+    <div class="spotlight-group">
+	
+	<!-- image start -->
+	
+	 <div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office1.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office1.jpg" alt="">
+        </div>
+	
+	<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office8.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office8.jpg" alt="">
+        </div>
+		
+        <div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office2.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office2.jpg" alt="">
+        </div>
+		
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office3.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office3.jpg" alt="">
+        </div>
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office4.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office4.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office5.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office6.jpg" alt="">
+        </div>
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office6.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office6.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office7.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office7.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office8.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office8.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office9.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office9.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office10.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office10.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office11.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office11.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office12.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office12.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office13.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office13.jpg" alt="">
+        </div>
+		
+		<div class="spotlight" data-media="image" data-src="../gallery/video-image/office-image/office14.jpg" data-description="">
+            <img src="../gallery/video-image/office-image/office14.jpg" alt="">
+        </div>
+		<!-- image end -->
+		
+		<!-- video start -->
+        <a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video1.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video1.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video1.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg1.jpg">
+            <img src="../gallery/video-image/office-video/video-bg1.jpg">
+        </a>
+		
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video2.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video2.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video2.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg2.jpg">
+            <img src="../gallery/video-image/office-video/video-bg2.jpg">
+        </a>
+		
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video3.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video3.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video3.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg3.jpg">
+            <img src="../gallery/video-image/office-video/video-bg3.jpg">
+        </a>
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video4.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video4.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video4.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg4.jpg">
+            <img src="../gallery/video-image/office-video/video-bg4.jpg">
+        </a>
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video5.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video5.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video5.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg5.jpg">
+            <img src="../gallery/video-image/office-video/video-bg5.jpg">
+        </a>
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video6.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video6.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video6.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg6.jpg">
+            <img src="../gallery/video-image/office-video/video-bg6.jpg">
+        </a>
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video7.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video7.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video7.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg7.jpg">
+            <img src="../gallery/video-image/office-video/video-bg7.jpg">
+        </a>
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video8.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video8.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video8.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg8.jpg">
+            <img src="../gallery/video-image/office-video/video-bg8.jpg">
+        </a>
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video9.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video9.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video9.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg9.jpg">
+            <img src="../gallery/video-image/office-video/video-bg9.jpg">
+        </a>
+		<a class="spotlight" data-media="video" data-src-webm="../gallery/video-image/office-video/video10.mp4" 
+		
+		data-src-ogg="../gallery/video-image/office-video/video10.mp4"
+		
+		data-src-mp4="../gallery/video-image/office-video/video10.mp4"
+		
+		data-autoplay="false" data-poster="../gallery/video-image/office-video/video-bg10.jpg">
+            <img src="../gallery/video-image/office-video/video-bg10.jpg">
+        </a>
+		
+		
+		<!-- vide end -->
+		
+   <div class="spotlight" data-src="../gallery/video-image/office-image/office8.jpg"></div>
+    </div>
+    <!-- Hidden Backstore -->
+   </div>
+   
+   
+   <!--::client logo part end::-->
+   <section class="client_logo animated fadeInDown" data-wow-delay="0.1s">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <div class="client_logo_slider owl-carousel d-flex justify-content-between">
+              <div class="single_client_logo">
+                <a href="https://flaxlinenofficial.com/" target="_blank"><img src="../images/flax-linen-logo.png" alt="Flax Linen" /></a>
+              </div>
+              <div class="single_client_logo">
+                <a href="https://pehtech.com/" target="_blank"><img src="../images/pehtech.png" alt="pehtech" /></a>
+              </div>
+              <div class="single_client_logo">
+                <a href="https://astircare.co.uk/" target="_blank"><img src="../images/astircare.png" alt="astircare" /></a>
+              </div>
+              <div class="single_client_logo">
+               <a href="https://promortgages.co.uk/" target="_blank"> <img src="../images/pro-mortgages.png" alt="pro mortgages" /></a>
+              </div>
+              <div class="single_client_logo">
+                <a href="https://ultior.co.uk/" target="_blank"><img src="../images/ultior.png" alt="ultior" /></a>
+              </div>
+			  <div class="single_client_logo">
+                <a href="https://www.spaceboxstorage.co.uk/" target="_blank"><img src="../images/spacebox-logo.png" alt="spacebox" /></a>
+              </div>
+			  <div class="single_client_logo">
+                <a href="https://houszy.co.uk/" target="_blank"><img src="../images/houszy-logo.png" alt="houszy" /></a>
+              </div>
+			
+             </div>
+          </div>
+		   
+        </div>
+      </div>
+    </section>
+    <!--::client logo part end::-->
+
+     <!-- footer part start-->
+    <footer class="footer-area">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-sm-6 col-md-3 col-xl-3">
+		  
+            <div class="single-footer-widget footer_1 animated fadeInDown" data-wow-delay="0.1s">
+			<h4>COMPANY</h4>
+              <!-- <a href="index.html">
+                <img src="images/footer_logo.png" alt="" />
+              </a> -->
+              <ul>
+			   <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <!-- <li><a href="javascript:void(0)">Team</a></li> -->
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+              </ul>
+             </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-3 animated fadeInDown" data-wow-delay="0.1s">
+            <div class="single-footer-widget footer_2">
+              <h4>Let Us Help You</h4>
+               <ul>
+                <li>
+                  <a href="privacy-policy.html">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="terms-condition.html">Terms & Condition</a>
+                </li>
+                <!-- <li>
+                  <a href="javascript:void(0)">Popular Blog</a>
+                </li> -->
+                <li>
+                  <a href="faq.html">FAQ</a>
+                </li>
+				
+				</ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-3 animated fadeInDown" data-wow-delay="0.1s">
+            <div class="single-footer-widget footer_2">
+              <h4>OUR SERVICES</h4>
+              <ul>
+                <li>
+                  <a href="website-designing-development.html">Web Designing & Web Development</a>
+                </li>
+                
+                <li>
+                  <a href="digital-marketing.html">Digital Marketing</a>
+                </li>
+				<li>
+                  <a href="software-development.html">Software Development</a>
+                </li>
+				<li>
+                  <a href="app-development.html">App Development</a>
+                </li>
+				<li>
+                  <a href="ecommerce-service.html">Ecommerce Service</a>
+                </li>
+				
+				<li>
+                  <a href="warehouse-management.html">Warehouse Management</a>
+                </li>
+				
+				
+              </ul>
+            </div>
+          </div>
+		  <div class="col-xl-3 col-sm-6 col-md-3 animated fadeInDown" data-wow-delay="0.1s">
+            <div class="single-footer-widget footer_2">
+              <h4>Contact Us</h4>
+              <ul>
+                <li>
+                  <span class="ti-email fotcon-icon"></span> <a href="mailto:info@mezzex.com">info@mezzex.com</a>
+                </li>
+                <li>
+                  <span class="ti-mobile fotcon-icon"></span><a href="tel:+44 121-6616357">+44 121-6616357</a>
+                </li>
+                <li>
+                  <span class="ti-location-pin fotcon-icon"></span><a href="JavaScript:void(0)" style="cursor:auto;">Spacebox Business Park
+Unit E 38, Plume Street<br/>
+Birmingham <br/> B6 7RT</a>
+                </li>
+				
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-3" style="display:none;">
+            <div class="single-footer-widget footer_2">
+              <div class="single_contact_info">
+                <h3>London - UK</h3>
+				<p>info@mezzex.com</p>
+				<p>+44 121-6616357</p>
+                <p>Spacebox Business Park
+Unit E 38, Plume Street
+Birmingham B6 7RT</p>
+                
+              </div>
+              <div class="single_contact_info">
+                <h3>India - IN</h3>
+                <p>info@mezzex.com</p>
+				<p>+91 8447819083</p>
+                <p>A 624 Logix Technova Sector 132 Noida, Utter Pradesh 201301</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright_part_text text-center">
+	  <div class="container">
+      
+          
+            
+              <div class="row align-items-center">
+              
+				  <div class="col-lg-2">
+				  <span><a href="index.html"><img src="images/inspire-logo.png" alt=""></a></span>
+				  </div>
+				  
+				   <div class="col-lg-2">
+				<div class="social_icon footer-icon">
+                <a href="https://www.facebook.com/officialmezzex" target="_blank"><i class="ti-facebook"></i></a>
+                <a href="https://twitter.com/MezzexM" target="_blank"><i class="ti-twitter-alt"></i></a>
+                <a href="https://www.linkedin.com/company/mezzex/about/" target="_blank"><i class="ti-linkedin"></i></a>
+                <a href="https://www.instagram.com/officialmezzex/" target="_blank"><i class="ti-instagram"></i></a>
+				<!-- <a href="#" target="_blank"><i class="ti-youtube"></i></a> -->
+              </div>
+				  </div>
+				   <div class="col-lg-8">
+				  <p class="footer-text m-0">
+                    
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Mezzex Inspiring Technology  Design & Develop by: <a href="https://mezzex.com" target="_blank" class="mezzex-text">Mezzex</a>
+
+                  </p>
+				  </div>
+				  
+				
+                  
+              
+              
+           
+          </div>
+        </div>
+      </div>
+     
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- isotope js -->
+    <script src="../js/isotope.pkgd.min.js"></script>
+	
+	<script src="../js/owl.carousel.min.js"></script>
+    <!-- particles js -->
+    <!-- <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/mixitup.min.js"></script> -->
+  
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+	<script src="../js/type-write.js"></script>
+    
+    <script>
+
+        /* Full example of API usage including "like button" as a custom control */
+
+        //import Spotlight from "./src/js/spotlight.js";
+
+        (function(){
+
+            const gallery = [{
+
+                title: "Lorem ipsum dolor sit amet",
+                description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+                src: "demo/gallery/london-1758181.jpg",
+                button: "Download Image",
+                onclick: Spotlight.download,
+                like: false
+            },{
+                title: "At vero eos et accusam",
+                description: "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+                src: "demo/gallery/sea-1975403.jpg",
+                button: "Next Slide",
+                onclick: Spotlight.next,
+                like: false,
+            },{
+                title: "Duis autem vel eum iriure dolor",
+                description: "In hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.",
+                src: "demo/gallery/newport-beach-2089906.jpg",
+                button: "Close Gallery",
+                onclick: Spotlight.close,
+                like: false
+            }/*,{
+                media: "node",
+                control: "next,prev,close",
+                src: (function(){
+                    const iframe = document.createElement("iframe");
+                    iframe.src = "https://www.youtube.com/embed/tgbNymZ7vqY";
+                    return iframe;
+                }())
+            }*/];
+
+            window.showGallery = function(index){
+
+                const control = to_array(document.getElementById("control").getElementsByTagName("input"));
+                const animation = to_array(document.getElementById("animation").getElementsByTagName("input"));
+                const modifier = document.getElementById("modifier").getElementsByTagName("input");
+
+                // store the button element to apply dom changes to it
+                let like;
+                // store the current index
+                let slide = 0;
+
+                function handler(){
+
+                    // get the current like state
+                    // at this point we use the stored last index from the variable "slide"
+                    const current_like_state = !gallery[slide].like;
+
+                    // toggles the current like state
+                    gallery[slide].like = current_like_state;
+
+                    // assign the state as class to visually represent the current like state
+                    this.classList.toggle("on");
+
+                    if(current_like_state){
+
+                        // do something if liked ...
+                    }
+                    else{
+
+                        // do something if unliked ...
+                    }
+                }
+
+                const options = {
+
+                    class: "only-this-gallery",
+                    index: index,
+                    control: control,
+                    animation: animation,
+                    // fires when gallery opens
+                    onshow: function(index){
+
+                        // the method "addControl" returns the new created control element
+                        like = Spotlight.addControl("like", handler);
+                    },
+                    // fires when gallery change to another page
+                    onchange: function(index, options){
+
+                        // store the current index for the button listener
+                        // the slide index start from 1 (as "page 1")
+                        slide = index - 1;
+
+                        // initially apply the stored like state when slide is openened
+                        // at this point we use the stored like element
+                        like.classList.toggle("on", gallery[slide].like);
+                    },
+                    // fires when gallery is requested to close
+                    onclose: function(index){
+
+                        // remove the custom button, so you are able
+                        // to open next gallery without this custom control
+                        Spotlight.removeControl("like");
+                    }
+                };
+
+                assign(options, modifier);
+
+                Spotlight.show(gallery, options);
+            };
+
+            /* helper functions to assign options for the demo page, so skip this part from here */
+
+            function to_array(nodelist){
+
+                const arr = [];
+
+                for(let i = 0, node; i < nodelist.length; i++){
+
+                    node = nodelist[i];
+                    node.checked && arr.push(node.value);
+                }
+
+                return arr;
+            }
+
+            function assign(options, nodelist){
+
+                for(let i = 0, node; i < nodelist.length; i++){
+
+                    node = nodelist[i];
+
+                    if(node.checked){
+
+                        if(node.name){
+
+                            options[node.name] = node.value;
+                        }
+                        else{
+
+                            options[node.value] = node.checked;
+                        }
+                    }
+                }
+            }
+
+        }());
+
+    </script>
+</body>
+</html>

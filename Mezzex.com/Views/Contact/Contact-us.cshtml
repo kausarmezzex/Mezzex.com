@@ -1,0 +1,132 @@
+﻿@model Mezzex.com.Models.ServiceModel
+
+<section class="breadcrumb contactus-page-breadcrumb breadcrumb_bg align-items-center">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-sm-12">
+                <div class="breadcrumb_tittle">
+                    <p><a href="index.html"><span class="ti-home home-breadicon"></span><strong>home</strong></a><span class="ti-angle-right breabarwicon"> </span><strong>Contact Us</strong></p>
+                    <h2>Contact Us</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact us start -->
+<section id="contactus-page">
+    <section id="ecommerce-servicee">
+        <div class="container">
+
+            <div class="section_tittle text-center contactus-head animated fadeInDown" data-wow-delay="0.1s">
+                <h2 class="typewrite animated fadeInDown" data-wow-delay="0.1s" data-period="2000" data-type='[ "With Mezzex", "Connect with Us"]'>
+                    <span class="wrap about-txt"></span>
+                </h2>
+
+
+                <div class="col-lg-8 mx-auto"><p>Please fill free to write us about any of your query, we will get in touch with you instantly. if you don’t want to fill the contact form then contact us directly at below details.</p></div>
+            </div>
+
+
+            <div class="row main-contact-officepage">
+                <div class="col-lg-3 animated fadeInDown" data-wow-delay="0.1s">
+                    <div class="crporate-office uk-office">
+                        <h3>UK Office</h3>
+                        <p>
+                            <span class="ti-location-pin fotcon-icon"></span> Spacebox Business Park Unit E
+                            38, Plume Street Birmingham B6 7RT
+                        </p>
+
+                        <div class="india-office uk-office">
+                            <h3>India Office</h3>
+                            <p><span class="ti-location-pin fotcon-icon"></span> A 624 Logix Technova Sector 132 Noida, Uttar Pradesh 201301</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-9 animated fadeInDown" data-wow-delay="0.1s">
+                    <div class="contact-office">
+                        <div class="crporate-office">
+                            <div class="row">
+                                <div class="col-lg-4 border-left-contact">
+                                    <span><img src="~/images/icon-contact-2.png"></span>
+                                    <h5>Phone Number</h5>
+                                    <p><span><img src="~/images/uk.png" width="20" style="margin-right:5px;"></span><a href="tel:+44 121-6616357">+44 121-6616357</a></p>
+                                    <p><span><img src="~/images/india.png" width="20" style="margin-right:5px;"></span><a href="tel:+91 8447819083">+91 8447819083</a></p>
+                                </div>
+
+                                <div class="col-lg-4 border-left-contact">
+                                    <span><img src="~/images/icon-contact-3.png"></span>
+                                    <h5>Email ID</h5>
+                                    <p><span><img src="~/images/uk.png" width="20" style="margin-right:5px;"></span><a href="mailto:info@mezzex.com">info@mezzex.com</a></p>
+                                    <p><span><img src="~/images/india.png" width="20" style="margin-right:5px;"></span><a href="mailto:info@mezzex.com">info@mezzex.com</a></p>
+                                </div>
+
+                                <div class="col-lg-4 border-left-contact" style="border:none;">
+                                    <span><img src="~/images/icon-contact-4.png"></span>
+                                    <h5>Work Hours</h5>
+                                    <p>Monday to Friday</p>
+                                    <p>8.00AM to 5.00PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-lg-5 animated fadeInDown" data-wow-delay="0.1s">
+                    <div class="contact-lft">
+                        <h5>Tell Us About Your <br /> Project</h5>
+                        <p>Let’s discuss your project and find out what we can do to provide value.</p>
+                        <span><img src="~/images/form-gr-contact.svg" alt="contact"></span>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="contact-rght1 p-4 bg-light rounded shadow">
+                        <form asp-action="SubmitContactForm" method="post">
+                            <!-- Email Input -->
+                            <div class="mb-3">
+                                <label for="emailid" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailid" name="email" placeholder="name@example.com" required>
+                            </div>
+
+                            <!-- Service Selection -->
+                            <div class="mb-3">
+                                <label for="SelectedService" class="form-label">Select Service</label>
+                                @Html.DropDownListFor(m => m.SelectedService, Model.Services, "Choose any", new { @class = "form-select", name = "selectedService" })
+                            </div>
+
+                            <!-- Subject Input -->
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+
+                            <!-- Phone Input -->
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+                            </div>
+
+                            <!-- Message Textarea -->
+                            <div class="mb-3">
+                                <label for="messagetextarea1" class="form-label">Message</label>
+                                <textarea class="form-control" id="messagetextarea1" name="message" rows="4" placeholder="Your message here" required></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button class="btn btn-dark btn-lg" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</section>

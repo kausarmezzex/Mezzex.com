@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["Description"]">
+    <meta name="keywords" content="@ViewData["Keywords"]">
+    <link rel="icon" href="~/images/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="~/css/animate.css" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="~/css/themify-icons.css" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="~/css/flaticon.css" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="~/css/magnific-popup.css" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="~/css/slick.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/bootnavbar.css"/>
+    <link href="~/css/style-service.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="~/css/nice-select.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/themify-icons.css" />
+    <meta name="google-site-verification" content="RQDV3I0y5_6XZ2qxqtehXqyFN_cD2wZpsceLfU1K7ls" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCZ9QNMXBF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NCZ9QNMXBF');
+    </script>
+    <style>
+        .full-width-container {
+            width: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+        /* Set default color to black */
+        header.main_menu .navbar-nav .nav-link,
+        header.main_menu .dropdown-item {
+            color: black !important; /* Set text color to black */
+        }
+
+            /* Hover effect: change color to blue */
+            header.main_menu .navbar-nav .nav-link:hover,
+            header.main_menu .dropdown-item:hover {
+                color: #007bff !important; /* Set hover color to blue */
+            }
+        /* Set the default color of social media icons to black */
+        .social_icon a i {
+            color: black !important; /* Make icons black */
+        }
+
+        /* Optional: Change color on hover to blue */
+        .social_icon a:hover i {
+            color: #007bff !important; /* Change to blue on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light" id="main_navbar">
+                        <a asp-controller="Home" asp-action="index" class="navbar-brand">
+                            <img src="~/images/Mezzex Web Logo.jpg" alt="logo" />
+                        </a>
+                        <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a asp-controller="Home" asp-action="index" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="About" asp-action="index" class="nav-link">About Us</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Services
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" asp-controller="Services" asp-action="website_designing_development">Website Designing & Development</a>
+                                        <a class="dropdown-item" asp-controller="Services" asp-action="digital_marketing">Digital Marketing</a>
+                                        <a class="dropdown-item" asp-controller="Services" asp-action="software_development">Software Development</a>
+                                        <a class="dropdown-item" asp-controller="Services" asp-action="app_development">App Development</a>
+                                        <a class="dropdown-item" asp-controller="Services" asp-action="ecommerce_service">Ecommerce services</a>
+                                        <a class="dropdown-item" asp-controller="Services" asp-action="warehouse_management">Warehouse Management</a>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Gallery" asp-action="index" class="nav-link">Gallery</a>
+                                </li>
+                                <li class="nav-item">
+                                    @*  <a asp-controller="Careers" asp-action="index" class="nav-link">Careers</a> *@
+                                </li>
+
+                                <li class="nav-item">
+                                    <a asp-controller="Contact" asp-action="index" class="nav-link">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://blog.mezzex.com/" target="_blank" class="nav-link">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="social_icon d-none d-lg-block">
+                            <a href="https://www.facebook.com/officialmezzex" target="_blank"><i class="ti-facebook"></i></a>
+                            <a href="https://twitter.com/MezzexM" target="_blank"><i class="ti-twitter-alt"></i></a>
+                            <a href="https://www.linkedin.com/company/mezzex/about/" target="_blank"><i class="ti-linkedin"></i></a>
+                            <a href="https://www.instagram.com/officialmezzex/" target="_blank"><i class="ti-instagram"></i></a>
+
+                        </div>
+                        <div class="main-get-quote">
+                            <a asp-controller="Contact" class="btn_1 get-quote">Get A Quote</a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="ti-menu"></span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="full-width-container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    @await Html.PartialAsync("~/Views/Shared/_clientLogo.cshtml")
+    <div class="go-top">
+        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 col-md-3 col-xl-3">
+
+                    <div class="single-footer-widget footer_1 animated fadeInDown" data-wow-delay="0.1s">
+                        <h4>COMPANY</h4>
+                        <!-- <a href="index.html">
+                          <img src="images/footer_logo.png" alt="" />
+                        </a> -->
+                        <ul>
+                            <li> <a asp-controller="Home" asp-action="index">Home</a></li>
+
+                            <li><a asp-controller="About" asp-action="index">About Us</a></li>
+                            <!-- <li><a href="javascript:void(0)">Team</a></li> -->
+                            <li><a asp-controller="Portfolio" asp-action="index">Portfolio</a></li>
+                            <li> <a asp-controller="Contact" asp-action="index">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-md-3 animated fadeInDown" data-wow-delay="0.1s">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Let Us Help You</h4>
+                        <ul>
+                            <li>
+                                <a asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a asp-controller="TermsCondition" asp-action="index">Terms & Condition</a>
+                            </li>
+                            <!-- <li>
+                              <a href="javascript:void(0)">Popular Blog</a>
+                            </li> -->
+                            <li>
+                                <a asp-controller="Faq" asp-action="index">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="https://blog.mezzex.com/" target="_blank">Blog</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-md-3 animated fadeInDown" data-wow-delay="0.1s">
+                    <div class="single-footer-widget footer_2">
+                        <h4>OUR SERVICES</h4>
+                        <ul>
+                            <li>
+                                <a asp-controller="Services" asp-action="website_designing_development">Web Designing & Web Development</a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="Services" asp-action="digital_marketing">Digital Marketing</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Services" asp-action="software_development">Software Development</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Services" asp-action="app_development">App Development</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Services" asp-action="ecommerce_service">Ecommerce Service</a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="Services" asp-action="warehouse_management">Warehouse Management</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-md-3 animated fadeInDown" data-wow-delay="0.1s">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li>
+                                <span class="ti-email fotcon-icon"></span> <a href="mailto:info@mezzex.com">info@mezzex.com</a>
+                            </li>
+                            <li>
+                                <span class="ti-mobile fotcon-icon"></span><a href="tel:+44 121-6616357">+44 121-6616357</a>
+                            </li>
+                            <li>
+                                <span class="ti-location-pin fotcon-icon"></span><a href="JavaScript:void(0)" style="cursor:auto;">
+                                    Spacebox Business Park
+                                    Unit E 38, Plume Street<br />
+                                    Birmingham <br /> B6 7RT
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-sm-6 col-md-3" style="display:none;">
+                    <div class="single-footer-widget footer_2">
+                        <div class="single_contact_info">
+                            <h3>London - UK</h3>
+                            <p>info@mezzex.com</p>
+                            <p>+44 121-6616357</p>
+                            <p>
+                                Spacebox Business Park
+                                Unit E 38, Plume Street
+                                Birmingham B6 7RT
+                            </p>
+
+                        </div>
+                        <div class="single_contact_info">
+                            <h3>India - IN</h3>
+                            <p>info@mezzex.com</p>
+                            <p>+91 8447819083</p>
+                            <p>A 624 Logix Technova Sector 132 Noida, Utter Pradesh 201301</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright_part_text text-center">
+            <div class="container">
+
+
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-2">
+                        <span><a asp-controller="Home" asp-action="index"><img src="~/images/inspire-logo.png" alt=""></a></span>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="social_icon footer-icon">
+                            <a href="https://www.facebook.com/officialmezzex" target="_blank"><i class="ti-facebook"></i></a>
+                            <a href="https://twitter.com/MezzexM" target="_blank"><i class="ti-twitter-alt"></i></a>
+                            <a href="https://www.linkedin.com/company/mezzex/about/" target="_blank"><i class="ti-linkedin"></i></a>
+                            <a href="https://www.instagram.com/officialmezzex/" target="_blank"><i class="ti-instagram"></i></a>
+                            <!-- <a href="#" target="_blank"><i class="ti-youtube"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="footer-text m-0">
+
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Mezzex Inspiring Technology  Design & Development by: <a href="https://mezzex.com" target="_blank" class="mezzex-text">Mezzex</a>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="~/js/bootnavbar.js"></script>
+    <script src="~/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="~/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/easing.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.js"></script>
+    <!-- isotope js -->
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <!-- particles js -->
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <!-- custom js -->
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/type-write.js"></script>
+    <script src="~/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="~/js/jquery.counterup.min.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/mixitup.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCZ9QNMXBF"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 4000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
