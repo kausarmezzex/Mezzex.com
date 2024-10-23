@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿@{
+	ViewData["Title"] = "Mezzex";
+}
+<!doctype html>
 <html lang="zxx">
 
 <head>
@@ -6,7 +9,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Title -->
-	<title>Insperon Tech</title>
+	<title>mezzex </title>
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap"
 		  rel="stylesheet">
@@ -59,6 +62,50 @@
 				margin-top: 3px;
 				border-radius: 3px;
 			}
+		/* Set default color to black */
+		header.main_menu .navbar-nav .nav-link,
+		header.main_menu .dropdown-item {
+			color: black !important;
+		}
+
+			/* Hover effect: change color to blue */
+			header.main_menu .navbar-nav .nav-link:hover,
+			header.main_menu .dropdown-item:hover {
+				color: #2f5a84 !important; /* Set hover color to blue */
+			}
+		/* Set the default color of social media icons to black */
+		.social_icon a i {
+			color: #2f5a84 !important; /* Make icons black */
+		}
+
+		/* Optional: Change color on hover to blue */
+		.social_icon a:hover i {
+			color: #007bff !important; /* Change to blue on hover */
+		}
+
+		.menu_fixed {
+			background-color: #ffffff !important;
+			color: #fff !important;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		.color-text {
+			color: #2f5a84 !important;
+		}
+
+		.main-banner-content h5 {
+			color: #2f5a84 !important;
+		}
+
+		.default-btn {
+			background-color: #2f5a84 !important;
+		}
+		.default-btn-one {
+			color: #2f5a84 !important;
+		}
 	</style>
 </head>
 
@@ -88,8 +135,8 @@
 									data security – partner with us to engineer your digital future.
 								</p>
 								<div class="banner-btn">
-									<a href="#0" class="default-btn-one"> Learn More<span></span></a>
-									<a href="#0" class="default-btn"> Our Services<span></span></a>
+									<a asp-controller="About" asp-action="index" class="default-btn-one"> Learn More<span></span></a>
+									<a href="#services" class="default-btn">Our Services<span></span></a>
 								</div>
 							</div>
 						</div>
@@ -105,13 +152,18 @@
 	</div>
 	<!-- End Home Section -->
 	<!-- Start Services Section -->
-	<section class="services-section section-padding">
+	<section id="services" class="services-section section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-title">
 						<h6 class="sub-title">What We Provide</h6>
-						<h2>Our Services</h2>
+						<h2>Our IT Services</h2>
+						<p >
+							Although digital marketing and IT services in the UK are an ever-changing industry, finding the right partner can be challenging, especially without the right expertise and approach. Mezzex is here to help you accelerate your brand growth to the top of the virtual revolution through expert digital marketing and other IT services, delivered according to your objectives.
+						</p>
+						<p class="be-among-text">Be among giants in your segment in organic searches, match your social web with your brand, and deliver tailored messages to the target audience cost-effectively.</p>
+
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
@@ -119,13 +171,13 @@
 						<div class="services-icon">
 							<i class="flaticon-development"></i>
 						</div>
-						<h3>Web Development</h3>
-						<p>
-							We craft user-centric interfaces that delight your audience and streamline their journey.
+						<h3>Website Designing & Development</h3>
+						<p class="truncate-content">
+							Get the most interactive and enchanting website to bring your business to life digitally through our website and app development services. Boost your brand’s presence in digital, keep your users engaged, increase conversion rates and boost sales for the long term.
 
 						</p>
 						<div class="services-btn">
-							<a href="service-1.html" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
+							<a asp-controller="Services" asp-action="website_designing_development" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
 						</div>
 					</div>
 				</div>
@@ -135,12 +187,12 @@
 							<i class="flaticon-thumbs-up"></i>
 						</div>
 						<h3>Digital Marketing</h3>
-						<p>
-							Build engaged communities and amplify your brand message across platforms.
+						<p class="truncate-content">
+							Access a full suite of Digital Marketing Services to bring your business to new heights of derived growth, improved online visibility, and outranked competition. Check how you can fundamentally boost sales in both B2C and B2B industries with our Full Service Digital Marketing and Advertising Agency below.
 
 						</p>
 						<div class="services-btn">
-							<a href="service-2.html" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
+							<a asp-controller="Services" asp-action="digital_marketing" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
 						</div>
 					</div>
 				</div>
@@ -149,14 +201,13 @@
 						<div class="services-icon">
 							<i class="flaticon-analytics"></i>
 						</div>
-						<h3>Startup Solutions</h3>
-						<p>
-							Headline Ignite Your Startup
-							Your Journey, Our Expertise
-							Key Service Offerings:
+						<h3>Software Development</h3>
+						<p class="truncate-content">
+							Make your software or website look good, work well, and be fully optimised to offer a seamless user experience for your target audience with our development services. As a top software development company, we develop software and websites that are responsive, mobile-friendly, user-friendly, and future-proofed to grow and develop by your business objectives.
+
 						</p>
 						<div class="services-btn">
-							<a href="service-3.html" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
+							<a asp-controller="Services" asp-action="software_development" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
 						</div>
 					</div>
 				</div>
@@ -165,12 +216,12 @@
 						<div class="services-icon">
 							<i class="flaticon-light-bulb"></i>
 						</div>
-						<h3>Graphic Design</h3>
-						<p>
-							logos, brand guidelines, and visual tell your brand story and resonate with your audience.
+						<h3>APP Development</h3>
+						<p class="truncate-content">
+							The number of application users is increasing every day, whether you are an Android or an iOS user. This is why as an application development company, Mezzex offers exceptional app development services to help you keep up with the latest trends and technologies to bring you the best solutions for your needs.
 						</p>
 						<div class="services-btn">
-							<a href="service-2.html" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
+							<a asp-controller="Services" asp-action="app_development" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
 						</div>
 					</div>
 				</div>
@@ -179,10 +230,12 @@
 						<div class="services-icon">
 							<i class="flaticon-coding"></i>
 						</div>
-						<h3>SEO Optimization</h3>
-						<p> the golden keys to audience hearts (and search engines)! We identify high-value keywords</p>
+						<h3>E-Commerce Service</h3>
+						<p class="truncate-content">
+							Position your e-commerce business website on the top search engine result pages of relevant web searches on Google and Bing. Ensure your website is easily discoverability, drives relevant traffic, and delivers top ROI. Access quality e-commerce services bound with e-commerce consulting, design, implementation, systems integration, and support services.
+						</p>
 						<div class="services-btn">
-							<a href="service-2.html" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
+							<a asp-controller="Services" asp-action="ecommerce_service" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
 						</div>
 					</div>
 				</div>
@@ -191,13 +244,13 @@
 						<div class="services-icon">
 							<i class="flaticon-mobile-app"></i>
 						</div>
-						<h3>Apps Development</h3>
-						<p>
-							Whether iOS or Android, our experts build high-performance apps iver flawless native
-							experience
+						<h3>Warehouse Management</h3>
+						<p class="truncate-content">
+							Mezzex provides a range of complete warehouse management services including order fulfilment, 3PL warehousing services, and inventory management. Our specialists are engaged in warehouse e-commerce fulfilment services, including real-time tracking of goods, shipping, packing services, and efficient material flow. We assist businesses in efficiently scaling while maximising warehouse inventory management and ensuring faster delivery to customers. Mezzex is your partner in reliable end-to-end fulfilment services that optimise your operations and allow you to focus on growth.
+
 						</p>
 						<div class="services-btn">
-							<a href="service-3.html" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
+							<a asp-controller="Services" asp-action="warehouse_management" class="read-more"><i class="bi bi-arrow-right-short"></i> Read More</a>
 						</div>
 					</div>
 				</div>
@@ -213,7 +266,7 @@
 					<div class="single-counter">
 						<div class="counter-contents">
 							<h2>
-								<span class="counter-number">20</span>
+								<span class="counter-number" data-target="20">0</span> <!-- Start from 0 -->
 								<span>+</span>
 							</h2>
 							<h3 class="counter-heading">Years of Experience</h3>
@@ -224,7 +277,7 @@
 					<div class="single-counter">
 						<div class="counter-contents">
 							<h2>
-								<span class="counter-number">1200</span>
+								<span class="counter-number" data-target="1200">0</span> <!-- Start from 0 -->
 								<span>+</span>
 							</h2>
 							<h3 class="counter-heading">Complete Project</h3>
@@ -235,7 +288,7 @@
 					<div class="single-counter">
 						<div class="counter-contents">
 							<h2>
-								<span class="counter-number">250</span>
+								<span class="counter-number" data-target="250">0</span> <!-- Start from 0 -->
 								<span>+</span>
 							</h2>
 							<h3 class="counter-heading">Working Employees</h3>
@@ -246,7 +299,7 @@
 					<div class="single-counter">
 						<div class="counter-contents">
 							<h2>
-								<span class="counter-number">3000</span>
+								<span class="counter-number" data-target="3000">0</span> <!-- Start from 0 -->
 								<span>+</span>
 							</h2>
 							<h3 class="counter-heading">Happy Customers</h3>
@@ -256,9 +309,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Counter Section -->
-	<!-- Start Work Process Section -->
 
+	<!-- End Counter Section -->
+	<!-- Process Section Start -->
 	<section class="process-section bg-grey section-padding">
 		<div class="container">
 			<div class="row">
@@ -271,21 +324,21 @@
 			</div>
 			<div class="tab process-list-tab">
 				<ul class="tabs">
-					<li>
-						<a href="#"><span>1. Research</span></a>
+					<li class="active">
+						<a href="#tab1"><span>1. Research</span></a>
 					</li>
 					<li>
-						<a href="#"><span>2. Designing</span></a>
+						<a href="#tab2"><span>2. Designing</span></a>
 					</li>
 					<li>
-						<a href="#"><span>3. Building</span></a>
+						<a href="#tab3"><span>3. Building</span></a>
 					</li>
 					<li>
-						<a href="#"><span>4. Delivery</span></a>
+						<a href="#tab4"><span>4. Delivery</span></a>
 					</li>
 				</ul>
 				<div class="tab_content">
-					<div class="tabs_item">
+					<div class="tabs_item active" id="tab1">
 						<div class="row align-items-center">
 							<div class="col-lg-7">
 								<div class="tab-solution-content">
@@ -305,16 +358,15 @@
 											<i class="fa fa-check-circle"></i> Understanding Your Audience
 										</li>
 										<li>
-											<i class="fa fa-check-circle"></i>Competitive Analysis
+											<i class="fa fa-check-circle"></i> Competitive Analysis
 										</li>
 										<li>
-											<i class="fa fa-check-circle"></i>Market Trends and Insights
+											<i class="fa fa-check-circle"></i> Market Trends and Insights
 										</li>
 										<li>
-											<i class="fa fa-check-circle"></i>Building a Winning Strategy
+											<i class="fa fa-check-circle"></i> Building a Winning Strategy
 										</li>
 									</ul>
-
 								</div>
 							</div>
 							<div class="col-lg-5">
@@ -324,16 +376,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="tabs_item">
+					<div class="tabs_item" id="tab2">
 						<div class="row align-items-center">
 							<div class="col-lg-7">
 								<div class="tab-solution-content">
 									<h3>Our Team Creates Designs</h3>
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.There are many variations of
-										passages Lorem Ipsum available, but the majority have suffered alteration in
-										some form, by injected humour.
+										incididunt ut labore et dolore magna aliqua.
 									</p>
 									<ul class="tab-list">
 										<li>
@@ -349,7 +399,6 @@
 											to work smarter
 										</li>
 									</ul>
-
 								</div>
 							</div>
 							<div class="col-lg-5">
@@ -359,16 +408,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="tabs_item">
+					<div class="tabs_item" id="tab3">
 						<div class="row align-items-center">
 							<div class="col-lg-7">
 								<div class="tab-solution-content">
 									<h3>Development & Testing</h3>
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.There are many variations of
-										passages Lorem Ipsum available, but the majority have suffered alteration in
-										some form, by injected humour.
+										incididunt ut labore et dolore magna aliqua.
 									</p>
 									<ul class="tab-list">
 										<li>
@@ -384,11 +431,6 @@
 											to work smarter
 										</li>
 									</ul>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.There are many variations of
-										passages available.
-									</p>
 								</div>
 							</div>
 							<div class="col-lg-5">
@@ -398,16 +440,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="tabs_item">
+					<div class="tabs_item" id="tab4">
 						<div class="row align-items-center">
 							<div class="col-lg-7">
 								<div class="tab-solution-content">
 									<h3>Finally, We Deliver Website</h3>
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.There are many variations of
-										passages Lorem Ipsum available, but the majority have suffered alteration in
-										some form, by injected humour.
+										incididunt ut labore et dolore magna aliqua.
 									</p>
 									<ul class="tab-list">
 										<li>
@@ -422,7 +462,6 @@
 											<i class="fa fa-check-circle"></i> Competitive Analysis
 										</li>
 									</ul>
-
 								</div>
 							</div>
 							<div class="col-lg-5">
@@ -436,7 +475,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Work Process Section -->
+	<!-- Process Section End -->
 	<!-- Start Overview Section -->
 	<section class="overview-section section-padding">
 		<div class="container">
@@ -574,8 +613,8 @@
 						<h2>24x7 Expert Technical Support</h2>
 
 						<div class="hire-btn">
-							<a class="default-btn" href="tel:0802235678">Call Now<span></span></a>
-							<a class="default-btn-one" href="contact.html">Contact Us<span></span></a>
+							<a class="default-btn" href="tel:08447819083">Call Now<span></span></a>
+							<a asp-controller="Contact" asp-action="index" class="default-btn-one">Contact Us<span></span></a>
 						</div>
 					</div>
 				</div>
@@ -611,7 +650,7 @@
 	<!-- Popper Min JS -->
 	<script src="assets/js/popper.min.js"></script>
 	<!-- Bootstrap Min JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="~/assets/js/bootstrap.bundle.min.js"></script>
 	<!-- Mean Menu JS -->
 	<script src="assets/js/jquery.meanmenu.js"></script>
 	<!-- Appear Min JS -->
@@ -628,7 +667,89 @@
 	<!-- Main JS -->
 	<script src="~/assets/js/main.js"></script>
 	<script>
+		$(document).ready(function () {
 
+			document.querySelector('.default-btn').addEventListener('click', function (e) {
+				e.preventDefault();  // Prevent the default jump behavior
+				document.querySelector('#services').scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+
+			$('.truncate-content').each(function () {
+				var content = $(this).text();
+				var limit = 277;
+
+				if (content.length > limit) {
+					var truncated = content.substring(0, limit) + '...';
+					$(this).text(truncated);
+				}
+			});
+			// Function to check if element is in viewport
+			function isInViewport(element) {
+				var elementTop = $(element).offset().top;
+				var elementBottom = elementTop + $(element).outerHeight();
+				var viewportTop = $(window).scrollTop();
+				var viewportBottom = viewportTop + $(window).height();
+				return elementBottom > viewportTop && elementTop < viewportBottom;
+			}
+
+			// Counter animation function
+			function animateCounters() {
+				$('.counter-number').each(function () {
+					var $this = $(this);
+					var countTo = $this.attr('data-target');
+
+					// Animate counter if it hasn't been triggered yet
+					if (!$this.hasClass('counted') && isInViewport($this)) {
+						$this.addClass('counted');
+						$({ countNum: $this.text() }).animate(
+							{ countNum: countTo },
+							{
+								duration: 2000,
+								easing: 'swing',
+								step: function () {
+									$this.text(Math.floor(this.countNum));
+								},
+								complete: function () {
+									$this.text(this.countNum);
+								}
+							}
+						);
+					}
+				});
+			}
+
+			// Initial counter animation on page load
+			animateCounters();
+
+			// Trigger counter animation on scroll
+			$(window).on('scroll', function () {
+				animateCounters();
+			});
+			// Hide all tabs content except the first one
+			$(".tab_content .tabs_item").hide();
+			$(".tab_content .tabs_item:first").show();
+
+			// Add active class to the first tab
+			$(".tabs li:first").addClass("active");
+
+			// When a tab is clicked
+			$(".tabs li a").click(function (e) {
+				e.preventDefault();
+
+				// Remove active class from all tabs and add to the clicked tab
+				$(".tabs li").removeClass("active");
+				$(this).parent().addClass("active");
+
+				// Hide all tab content
+				$(".tab_content .tabs_item").hide();
+
+				// Show the corresponding tab content
+				var activeTab = $(this).attr("href");
+				$(activeTab).fadeIn();
+			});
+		});
 	</script>
 </body>
 

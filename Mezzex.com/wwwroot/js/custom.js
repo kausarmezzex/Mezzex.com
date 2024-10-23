@@ -1,14 +1,21 @@
 (function($) {
   "use strict";
-  $(window).scroll(function () {
-    var window_top = $(window).scrollTop() + 1;
-    if (window_top > 50) {
-      $('.main_menu').addClass('menu_fixed animated fadeInDown');
-    } else {
-      $('.main_menu').removeClass('menu_fixed animated fadeInDown');
-    }
-  });
-  
+    $(window).scroll(function () {
+        var window_top = $(window).scrollTop() + 1;
+
+        // Check if the scroll is greater than 50px
+        if (window_top > 50) {
+            console.log('Adding class');  // Log this to check
+            $('.main_menu').addClass('menu_fixed animated fadeInDown'); // Add class to the main menu
+            $('.main_menu .main-menu-item ul li .nav-link').addClass('text-black'); // Add text-black class to the specific nav-link
+        } else {
+            console.log('Removing class');  // Log this to check
+            $('.main_menu').removeClass('menu_fixed animated fadeInDown'); // Remove class from the main menu
+            $('.main_menu .main-menu-item ul li .nav-link').removeClass('text-black'); // Remove text-black class from the specific nav-link
+        }
+    });
+
+
   $(".popup-youtube, .popup-vimeo").magnificPopup({
     // disableOn: 700,
     type: "iframe",

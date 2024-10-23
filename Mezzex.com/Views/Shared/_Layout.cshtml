@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <!-- animate CSS -->
     <link rel="stylesheet" href="~/css/animate.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="~/css/owl.carousel.min.css" />
     <!-- themify CSS -->
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="~/css/flaticon.css" />
     <!-- font awesome CSS -->
     <link rel="stylesheet" href="~/css/magnific-popup.css" />
+    <link rel="stylesheet" href="~/assets/css/fontawesome.min.css">
     <!-- swiper CSS -->
     <link rel="stylesheet" href="~/css/slick.css" />
     <link rel="stylesheet" href="~/css/site.css" />
@@ -29,8 +32,9 @@
     <link rel="stylesheet" href="~/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="~/css/nice-select.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
+
     <link rel="stylesheet" href="~/css/themify-icons.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="google-site-verification" content="RQDV3I0y5_6XZ2qxqtehXqyFN_cD2wZpsceLfU1K7ls" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCZ9QNMXBF"></script>
     <script>
@@ -47,37 +51,66 @@
         body {
             overflow-x: hidden;
         }
-        /* Set default color to black */
-        header.main_menu .navbar-nav .nav-link,
-        header.main_menu .dropdown-item {
-            color: black !important; /* Set text color to black */
+
+        header.main_menu .navbar-nav .nav-link:hover,
+        header.main_menu .dropdown-item:hover {
+            color: #007bff !important; /* Set hover color to blue */
         }
 
-            /* Hover effect: change color to blue */
-            header.main_menu .navbar-nav .nav-link:hover,
-            header.main_menu .dropdown-item:hover {
-                color: #007bff !important; /* Set hover color to blue */
+        .go-top {
+            background-color: #2e5b84 !important;
+        }
+
+        .read-more  {
+            color: #2e5b84 !important; /* Set hover color to blue */
+        }
+
+            .read-more i {
+                color: #2e5b84 !important; /* Set hover color to blue */
             }
-        /* Set the default color of social media icons to black */
-        .social_icon a i {
-            color: black !important; /* Make icons black */
+
+        .process-list-tab .tabs li.current a,
+        .process-list-tab .tabs li:hover a {
+            color: #ffffff;
+            background-color: #2e5b84 !important;
         }
 
-        /* Optional: Change color on hover to blue */
-        .social_icon a:hover i {
-            color: #007bff !important; /* Change to blue on hover */
+        .process-list-tab .tab_content .tabs_item .tab-solution-content .tab-list i {
+            color: #2e5b84 !important;
         }
 
-    </style>
+        .overview-content .features-list li span::before{
+            background-color: #2e5b84 !important;
+        }
+        
+        .overview-content .features-list li span{
+            border-left: 2px solid #2e5b84 !important;
+        }
+
+        #our-wharehouse-managment-inner .our-processbox{
+            border-radius: 25px !important;
+            padding: 54px 16px !important;
+        }
+
+        .categories_post img{
+            border-radius: 25px !important;
+        }
+
+        #our-wharehouse-managment-inner .row {
+            border-bottom: 0 !important;
+            margin-bottom: 40px !important;
+        }
+        </style>
 </head>
-<body>
+<body class="@ViewContext.RouteData.Values["action"]">
     <header class="main_menu home_menu">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light" id="main_navbar">
                         <a asp-controller="Home" asp-action="index" class="navbar-brand">
-                            <img src="~/images/Mezzex Web Logo.jpg" alt="logo" />
+                            <img src="~/images/Mezzex Web Logo.jpg" alt="logo" class="logo-image" />
+
                         </a>
                         <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
@@ -115,15 +148,14 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="social_icon d-none d-lg-block">
+                        <div class="social_icon d-none d-lg-block sociel_Ico">
                             <a href="https://www.facebook.com/officialmezzex" target="_blank"><i class="ti-facebook"></i></a>
                             <a href="https://twitter.com/MezzexM" target="_blank"><i class="ti-twitter-alt"></i></a>
                             <a href="https://www.linkedin.com/company/mezzex/about/" target="_blank"><i class="ti-linkedin"></i></a>
                             <a href="https://www.instagram.com/officialmezzex/" target="_blank"><i class="ti-instagram"></i></a>
-
                         </div>
                         <div class="main-get-quote">
-                            <a asp-controller="Contact" class="btn_1 get-quote">Get A Quote</a>
+                            <a asp-controller="Contact" asp-action="index" class="btn_1 get-quote">Get A Quote</a>
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false"
@@ -278,9 +310,9 @@
 
                     <div class="col-lg-2">
                         <div class="social_icon footer-icon">
-                            <a href="https://www.facebook.com/officialmezzex" target="_blank"><i class="ti-facebook"></i></a>
+                            <a href="https://www.facebook.com/officialmezzex" target="_blank"><i class="ti-facebook "></i></a>
                             <a href="https://twitter.com/MezzexM" target="_blank"><i class="ti-twitter-alt"></i></a>
-                            <a href="https://www.linkedin.com/company/mezzex/about/" target="_blank"><i class="ti-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/company/mezzex/about/" target="_blank"><i class="ti-linkedin "></i></a>
                             <a href="https://www.instagram.com/officialmezzex/" target="_blank"><i class="ti-instagram"></i></a>
                             <!-- <a href="#" target="_blank"><i class="ti-youtube"></i></a> -->
                         </div>
@@ -297,6 +329,8 @@
         </div>
 
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
     <script src="~/js/bootnavbar.js"></script>
     <script src="~/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
@@ -315,17 +349,55 @@
     <!-- custom js -->
     <script src="~/js/custom.js"></script>
     <script src="~/js/type-write.js"></script>
-    <script src="~/js/jquery-3.3.1.slim.min.js"></script>
     <script src="~/js/jquery.counterup.min.js"></script>
     <script src="~/js/jquery.fancybox.min.js"></script>
     <script src="~/js/mixitup.min.js"></script>
     <script src="~/js/popper.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="~/js/slick.min.js"></script>
     <script src="~/js/"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCZ9QNMXBF"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NCZ9QNMXBF');
+    </script>
+    <script>
         $(document).ready(function () {
+            console.log('Document is ready');  // Debugging message to verify
+            $(window).scroll(function () {
+                console.log('Scroll event triggered');  // Debugging message for scroll
+                var window_top = $(window).scrollTop() + 1;
 
+                if (window_top > 50) {
+                    console.log('Adding class');  // Log this to check
+                    $('.main_menu').addClass('menu_fixed animated fadeInDown');
+                    $('.main_menu .main-menu-item ul li .nav-link').addClass('text-black');
+                    $('.sociel_Ico a i').addClass('text-black');
+                } else {
+                    console.log('Removing class');  // Log this to check
+                    $('.main_menu').removeClass('menu_fixed animated fadeInDown');
+                    $('.main_menu .main-menu-item ul li .nav-link').removeClass('text-black');
+                    $('.sociel_Ico a i').removeClass('text-black');
+                }
+            });
+
+            $(window).on('scroll', function () {
+                var scrolled = $(window).scrollTop();
+                if (scrolled > 600) {
+                    $('.go-top').addClass('active');  // Show button when scrolled down 600px
+                } else {
+                    $('.go-top').removeClass('active');  // Hide button when scrolled up
+                }
+            });
+
+            // Click event to scroll back to the top
+            $('.go-top').on('click', function () {
+                console.log("click")
+                $("html, body").animate({ scrollTop: 0 }, 800);  // Smooth scroll to top
+            });
+           
             $('.counter').each(function () {
                 $(this).prop('Counter', 0).animate({
                     Counter: $(this).text()
@@ -340,6 +412,7 @@
 
         });
     </script>
+   
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

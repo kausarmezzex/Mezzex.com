@@ -51,3 +51,27 @@
         font-size: 2rem; /* Smaller title size for mobile */
     }
 }
+
+.text-black {
+    color: black !important; /* Ensure the text becomes black */
+}
+/* Style for the logo image with smoother corners */
+
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .logo-image {
+        max-width: 150px; /* Reduce logo size for tablets and smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        max-width: 120px; /* Further reduce logo size for mobile devices */
+    }
+}
+
+.logo-image:hover {
+    transform: scale(1.05); /* Slight zoom effect when hovered */
+    transition: transform 0.3s ease; /* Smooth transition */
+}

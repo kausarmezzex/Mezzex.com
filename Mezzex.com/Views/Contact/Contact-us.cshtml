@@ -1,5 +1,6 @@
 ﻿@model Mezzex.com.Models.ServiceModel
-
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <section class="breadcrumb contactus-page-breadcrumb breadcrumb_bg align-items-center">
     <div class="container">
         <div class="row align-items-center justify-content-between">
@@ -87,39 +88,46 @@
                 <div class="col-lg-7 wow fadeIn" data-wow-delay="0.1s">
                     <div class="contact-rght1 p-4 bg-light rounded shadow">
                         <form asp-action="SubmitContactForm" method="post">
-                            <!-- Email Input -->
                             <div class="mb-3">
-                                <label for="emailid" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="emailid" name="email" placeholder="name@example.com" required>
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="Email" value="@Model.Email" required />
                             </div>
 
-                            <!-- Service Selection -->
                             <div class="mb-3">
-                                <label for="SelectedService" class="form-label">Select Service</label>
-                                @Html.DropDownListFor(m => m.SelectedService, Model.Services, "Choose any", new { @class = "form-select", name = "selectedService" })
+                                <label for="selectedService" class="form-label">Select Service</label>
+                                <div>
+                                    @Html.DropDownListFor(m => m.SelectedService, Model.Services, "Choose any", new { @class = "form-select w-100 mb-2" })
+                                </div>
                             </div>
 
-                            <!-- Subject Input -->
-                            <div class="mb-3">
+
+
+                            <div class="mb-3 mt-2">
                                 <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                <div>
+                                <input type="text" class="form-control" id="subject" name="Subject" value="@Model.Subject" required />
+                                </div>
                             </div>
 
-                            <!-- Phone Input -->
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Phone</label>
-                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+                                <input type="tel" class="form-control" id="phone" name="Phone" value="@Model.Phone" required />
                             </div>
 
-                            <!-- Message Textarea -->
                             <div class="mb-3">
-                                <label for="messagetextarea1" class="form-label">Message</label>
-                                <textarea class="form-control" id="messagetextarea1" name="message" rows="4" placeholder="Your message here" required></textarea>
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="Message" rows="4" required>@Model.Message</textarea>
                             </div>
 
-                            <!-- Submit Button -->
+                            <!-- Math Captcha -->
+                            <div class="mb-3">
+                                <label for="captchaAnswer" class="form-label">Solve: @ViewBag.CaptchaQuestion</label>
+                                <input type="text" class="form-control" id="captchaAnswer" name="captchaAnswer" required />
+                                <span class="text-danger">@Html.ValidationMessage("captchaAnswer")</span>
+                            </div>
+
                             <div class="d-grid">
-                                <button class="btn btn-dark btn-lg" type="submit">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -130,3 +138,8 @@
         </div>
     </section>
 </section>
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate.unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}

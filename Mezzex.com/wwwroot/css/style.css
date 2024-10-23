@@ -1,8 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap);
-
+/*
 body, ul {
     margin: 0;
     padding: 0
+}*/
+body, ul {
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    margin: 0;
 }
 
 .submit_btn, input:focus, input:hover {
@@ -17,8 +23,20 @@ body, ul {
     font-weight: 500
 }
 
-#coundter-box p, body, p {
-    font-family: Verdana
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.4;
+    font-family: 'Jost', sans-serif;
+}
+
+p {
+    color: #5f5f5f;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    font-family: 'Jost', sans-serif;
+    margin-bottom: 15px;
 }
 
 .btn_2:hover {
@@ -33,6 +51,90 @@ body {
     font-size: 13px
 }
 
+/******************************************
+ ** - 00 -  Go Top CSS
+ ******************************************/
+.go-top {
+    color: #ffffff;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 3px;
+    background-color: #2e5b83;
+    -webkit-transition: .9s;
+    transition: .9s;
+    cursor: pointer;
+}
+
+    .go-top.active {
+        top: 95%;
+        -webkit-transform: translateY(-98%);
+        transform: translateY(-98%);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .go-top i {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        margin: 0 auto;
+    }
+
+        .go-top i:last-child {
+            top: 60%;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+    .go-top::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        border-radius: 3px;
+        background-color: #2e5b83;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+
+    .go-top:hover, .go-top:focus {
+        color: #ffffff;
+    }
+
+        .go-top:hover::before, .go-top:focus::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .go-top:hover i:first-child, .go-top:focus i:first-child {
+            top: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .go-top:hover i:last-child, .go-top:focus i:last-child {
+            top: 50%;
+            opacity: 1;
+            visibility: visible;
+        }
 .genric-btn:focus, .message_submit_form:focus, .single-input:focus, .single-textarea:focus, .testimonial_part .owl-dots button.owl-dot:focus {
     outline: 0
 }
@@ -130,10 +232,14 @@ p {
     font-weight: 300
 }
 
+
 /*.main_menu .main-menu-item ul li .nav-link:hover, .wrap, a.mezzex-text:hover {
     color: #fff !important
 }*/
-
+/* When scrolled and the menu_fixed is applied, make the text color black */
+.text-black {
+    color: black !important; /* Change text color to black */
+}
 @media (max-width:576px) {
     .padding_top {
         padding-top: 70px
@@ -1671,8 +1777,7 @@ ul {
 }
 
 .menu_fixed {
-    background-color: #e6ecf2;
-    color: #ffffff !important; /* Force the text to be white */
+    background-color: #ffffff;
 }
 .client_logo {
     background-color: #2e5984;
@@ -2798,7 +2903,7 @@ section.our_service {
 
     .navbar-toggler span {
         font-size: 30px;
-        color: #fff
+        color: #2976bc !important;
     }
 
     .navbar {
@@ -4195,7 +4300,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #ecommerce-servicee p {
     color: #253053;
-    font-size: 13px
+    font-size: 16px
 }
 
 #ecommerce-servicee {
@@ -4225,14 +4330,14 @@ h1, h2, h3, h4, h5, h6 {
 
     .our-processbox h2 {
         color: #253053;
-        font-size: 17px;
+        font-size: 18px;
         font-weight: 600
     }
 
     .our-processbox p {
         color: #253053;
         line-height: 22px;
-        font-size: 13px
+        font-size: 16px
     }
 
 #main-app-development .section_tittle p, #main-blog-page .section_tittle p, #our-process-inner .section_tittle p, #technologies-we-work-with .section_tittle p {
@@ -4645,15 +4750,15 @@ p.ppc-about {
 #our-wharehouse-managment-inner .our-processbox {
     background: 0 0;
     border: none;
-    border-radius: 4px;
-    padding: 16px 0;
+    border-radius: 9px;
+    padding: 16px 16px;
     margin-bottom: 30px
 }
 
-#our-wharehouse-managment-inner .row {
+/*#our-wharehouse-managment-inner .row {
     border-bottom: 2px solid #ddd;
     margin-bottom: 50px
-}
+}*/
 
 #our-wharehouse-managment-inner .our-processbox h2 {
     font-size: 32px;

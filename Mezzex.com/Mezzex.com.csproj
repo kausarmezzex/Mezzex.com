@@ -114,6 +114,7 @@
 
   <ItemGroup>
     <PackageReference Include="MSBuild.SonarQube.Runner.Tool" Version="4.8.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

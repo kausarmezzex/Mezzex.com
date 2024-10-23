@@ -5,10 +5,13 @@ namespace Mezzex.com.Models
 {
     public class ServiceModel
     {
-        // This will hold the selected value
+        public string Email { get; set; }
         public string SelectedService { get; set; }
+        public string Subject { get; set; }
+        public string Phone { get; set; }
+        public string Message { get; set; }
 
-        // This will populate the dropdown list items
         public List<SelectListItem> Services { get; set; }
     }
+
 }
